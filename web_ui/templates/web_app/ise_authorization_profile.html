@@ -1,0 +1,49 @@
+<div class="hero hero--indigo">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-12 col-xl-12">
+                    <div class="flex-fluid">
+                        <h1>ISE Create </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="secondary-tabs">
+            <div class="tab-content">
+                <div id="tab-intro-content" class="tab-pane active">
+                    <div class="panel panel--loose panel--bordered">
+                        <div id="content-div" class="row ">
+                            <div class="col-md-12 text-large">
+                                <br/>
+                                <h4 class="text-blue base-margin-bottom">Authorization Profile</h4>
+                                <hr/>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group__text">
+                                            <input id="iseap" ng-model="iseparameters.iseap">
+                                            <label for="iseap">Authorization Profile</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-large">
+                                        <br/>
+                                        <!-- ****** Button to send deployment to the server ****** -->
+                                        <button id="btnDeploy" class="btn btn--success" style="float:right"
+                                                ng-disabled="loading"
+                                                ng-click="isedeploy();">
+                                            Deploy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

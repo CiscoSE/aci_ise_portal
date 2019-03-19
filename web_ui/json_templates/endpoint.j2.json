@@ -1,0 +1,10 @@
+{
+  "ERSEndPoint": {
+    "name": "{{ macadd }}",
+    "mac": "{{ macadd }}",
+    "profileId": "0eba7c50-8c00-11e6-996c-525400b48521",
+    "staticProfileAssignment": true,
+    "groupId": "{{ endpointgroupid }}",
+    "staticGroupAssignment": true
+  }
+}

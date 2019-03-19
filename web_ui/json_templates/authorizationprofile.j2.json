@@ -1,0 +1,24 @@
+{
+  "AuthorizationProfile": {
+    "name": "{{ ap_name }}",
+    "advancedAttributes": [
+      {
+        "leftHandSideDictionaryAttribue": {
+          "AdvancedAttributeValueType": "AdvancedDictionaryAttribute",
+          "dictionaryName": "Cisco",
+          "attributeName": "cisco-av-pair"
+        },
+        "rightHandSideAttribueValue": {
+          "AdvancedAttributeValueType": "AttributeValue",
+          "value": "cts:security-group-tag={{ apic_tenant }},{{ apic_ap }},{{ apic_epg }}"
+        }
+      }
+    ],
+    "accessType": "ACCESS_ACCEPT",
+    "vlan": {
+      "nameID": "{{ vlanid }}",
+      "tagID": 1
+    },
+    "profileName": "Cisco"
+  }
+}

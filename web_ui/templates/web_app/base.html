@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="cui" lang="en" id="styleguide">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACI ISE Portal</title>
+
+    <link rel="stylesheet" href="/static/web_app/public/css/animate.css">
+    <link rel="stylesheet" href="/static/web_app/assets/css/cui-styleguide.min.css">
+    <link rel="stylesheet" href="/static/web_app/public/css/featherlight.min.css">
+    <link rel="stylesheet" href="/static/web_app/public/css/diff2html.min.css">
+
+    <link rel="icon" href="/static/web_app/assets/img/favicon.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"
+            integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="/static/web_app/public/js/styleguide.js"></script>
+    <script src="/static/web_app/public/js/jquery-scrollto.js"></script>
+    <script src="/static/web_app/public/js/clipboard.js"></script>
+    <script src="/static/web_app/public/js/featherlight.min.js"></script>
+    <script src="/static/web_app/public/js/Markdown.Converter.js"></script>
+    <script src="/static/web_app/public/js/lodash.min.js"></script>
+    <!-- AngularJS -->
+    <script src="/static/web_app/public/js/angular-1.6.0/angular.min.js"></script>
+    <script src="/static/web_app/public/js/angular-1.6.0/angular-route.min.js"></script>
+    <script src="/static/web_app/public/js/angular-1.6.0/angular-animate.min.js"></script>
+    <script src="/static/web_app/public/js/angular-modules/web-app/web-app.js"></script>
+    <script src="/static/web_app/public/js/diff2html.min.js"></script>
+    <script src="/static/web_app/public/js/diff2html-ui.min.js"></script>
+
+
+    <link rel="stylesheet" href="/static/web_app/public/css/site.css">
+    <base href="/web/">
+
+</head>
+<body class="styleguide" ng-app="appModule">
+<div class="content-fluid" ng-controller="AppController">
+
+    {% block body %}
+
+    {% include "web_app/default_menu_partial.html" %}
+
+
+    {% block navbar %}
+    {% endblock navbar %}
+
+    {% block content %}
+    {% endblock %}
+
+
+    {% endblock body %}
+</div>
+</body>
+{% block scripts %}
+
+{% endblock scripts %}
+
+</html>
+

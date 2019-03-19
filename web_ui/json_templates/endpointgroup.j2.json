@@ -1,0 +1,7 @@
+{
+  "EndPointGroup" : {
+    "name" : "{{endpoint_name}}",
+    "description" : "{{endpoint_description}}",
+    "systemDefined" : true
+  }
+}

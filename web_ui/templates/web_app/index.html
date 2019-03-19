@@ -1,0 +1,50 @@
+{% extends "web_app/base.html" %}
+{% block content %}
+
+
+<main>
+    <header id="styleguideHeader" class="header header--compressed">
+        <div class="header-bar container">
+
+            <a id="menu_toggle" class="btn btn--small btn--icon toggle-menu">
+                <span class="icon-list-menu"></span>
+            </a>
+            <a class="header-bar__logo" href="http://www.cisco.com" target="_blank">
+                <span class="icon-cisco"></span>
+            </a>
+            <div class="header-bar__main">
+                <div class="header-heading">
+                    <h1 class="page-title">ACI ISE Portal<sup class="text-large hidden-xs">0.1</sup></h1>
+                </div>
+                <div ng-if="loading">
+                    <div class="loading-dots loading-dots--info">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-toolbar">
+                <a class="btn btn--small btn--icon"
+                   href="mailto:sfloresk@cisco.com?Subject=Feedback" title="Submit Feedback">
+                    <span class="icon-feedback"></span>
+                </a>
+            </div>
+        </div>
+        <div class="alert alert--danger animated fadeInLeft" ng-if="error != ''">
+            <div class="alert__icon icon-error"></div>
+            <div class="alert__message">{a error a}</div>
+            <div class="alert__close icon-close" ng-click="clearError();"></div>
+        </div>
+        <div class="alert alert--success animated fadeInLeft" ng-if="success != ''">
+            <div class="alert__icon icon-success"></div>
+            <div class="alert__message">{a success a}</div>
+            <div class="alert__close icon-close" ng-click="clearSuccess();"></div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="dynamic-view" ng-view></div>
+    </div>
+</main>
+
+{% endblock %}

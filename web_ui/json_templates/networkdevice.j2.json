@@ -1,0 +1,21 @@
+{
+  "NetworkDevice": {
+    "name": "{{ leafname }}",
+    "authenticationSettings": {
+      "radiusSharedSecret": "{{ sharedsecret }}"
+    },
+    "profileName": "Cisco",
+    "coaPort": 1700,
+    "NetworkDeviceIPList": [
+      {
+        "ipaddress": "{{ leafip }}",
+        "mask": 32
+      }
+    ],
+    "NetworkDeviceGroupList": [
+      "Location#All Locations",
+      "IPSEC#Is IPSEC Device#No",
+      "Device Type#All Device Types"
+    ]
+  }
+}

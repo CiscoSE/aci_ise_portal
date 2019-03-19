@@ -1,0 +1,52 @@
+<div class="hero hero--indigo">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-12 col-xl-12">
+                    <div class="flex-fluid">
+                        <h1>Add Network devices from ACI to ISE </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <h2 class="text-blue base-margin-bottom">ACI Leaf Devices</h2>
+            <p></p>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>ACI Leaf Devices to associate to ISE Network Devices</h4>
+                    <div class="form-group">
+                        <div class="form-group__text select ">
+                            <select id="sel_pod" name="sel_pod" ng-model="deployment.selectedPod"
+                                    ng-options="pod as pod.fabricPod.attributes.dn for pod in pods track by pod.fabricPod.attributes.dn"
+                                    ng-change="getLeafDevices(deployment.selectedPod)"></select>>
+                            <label for="sel_pod">Pod</label>
+                        </div>
+                    </div>
+
+
+                    <div id="leaf" name="leaf" ng-repeat="leaf in apicleafs">
+                        <label for="leaf">Leaf Nodes: {a leaf.fabricNode.attributes.dn a}</label></div>
+
+
+                </div>
+                <div class="col-md-12 text-large">
+                    <br/>
+                    <!-- ****** Button to send deployment to the server ****** -->
+                    <button id="btnDeploy" class="btn btn--success" style="float:right"
+                            ng-disabled="loading"
+                            ng-click="isedeployleaf();">
+                        Add Devices to ISE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

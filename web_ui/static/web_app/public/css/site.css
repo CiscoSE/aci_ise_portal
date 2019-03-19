@@ -1,0 +1,11 @@
+
+.ng-enter.dynamic-view {
+    //animation: fade_in 0.5s both ease-in; z-index: 8888;
+    //-webkit-animation: fade_in 0.5s both ease-in; z-index: 8888;
+}
+
+.ng-leave {
+    //animation: fade_out 0.5s both ease-in; z-index: 9999;
+    // -webkit-animation: fade_out 0.5s both ease-in; z-index: 8888;
+}
+

@@ -1,0 +1,143 @@
+<div class="hero hero--indigo">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-12 col-xl-12">
+                    <div class="flex-fluid">
+                        <h1>APIC and ISE Settings</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="section">
+            <div class="panel panel--loose panel--bordered">
+                <h2 class="text-blue base-margin-bottom">ISE  Settings</h2>
+                <p></p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="iseurl" ng-model="settings.iseurl">
+                                <label for="iseurl">URL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="iseusername" ng-model="settings.iseusername">
+                                <label for="iseusername">Username</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="isepassword" ng-model="settings.isepassword">
+                                <label for="isepassword">Password</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="iseFQDN" ng-model="settings.isefqdn">
+                                <label for="iseFQDN">FQDN</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="isesubname" ng-model="settings.isesubname">
+                                <label for="isesubname">Subscriber Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container">
+        <div class="section">
+            <div class="panel panel--loose panel--bordered">
+                <h2 class="text-blue base-margin-bottom">APIC Settings</h2>
+                <p></p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="apicurl" ng-model="settings.apicurl">
+                                <label for="apicurl">URL</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="apicusername" ng-model="settings.apicusername">
+                                <label for="apicusername">Username</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="apicpassword" ng-model="settings.apicpassword">
+                                <label for="apicpassword">Password</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group__text">
+                                <input id="apicsharedsecret" ng-model="settings.apicsharedsecret">
+                                <label for="apicsharedsecret">Shared Secret</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <div class="row">
+                <div class="col-md-12 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom"></h1>
+                </div>
+                <div class="col-md-12 text-large">
+                    <button class="btn btn--primary" ng-click="setSettings()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,167 @@
+<div class="hero hero--indigo">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-12 col-xl-12">
+                    <div class="flex-fluid">
+                        <h1>MAC Association </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="secondary-tabs">
+            <div class="tab-content">
+                <div id="tab-intro-content" class="tab-pane active">
+                    <div class="panel panel--loose panel--bordered">
+                        <div id="content-div" class="row ">
+                            <div class="col-md-12 text-large">
+                                <br/>
+                                <h4 class="text-blue base-margin-bottom">APIC</h4>
+                                <hr/>
+                                <!-- ****** Select for PODs ****** -->
+                                <div class="form-group">
+                                    <div class="form-group__text select ">
+                                        <select id="sel_pod" name="sel_pod" ng-model="deployment.selectedPod"
+                                                ng-options="pod as pod.fabricPod.attributes.dn for pod in pods track by pod.fabricPod.attributes.dn"
+                                                ng-change="getLeaf(deployment.selectedPod)"></select>>
+                                        <label for="sel_pod">Pod</label>
+                                    </div>
+                                </div>
+                                <!-- ****** Select for Tenants ****** -->
+                                <div class="form-group">
+                                    <div class="form-group__text select ">
+                                        <select id="sel_tenant" name="sel_tenant" ng-model="deployment.selectedTenant"
+                                                ng-options="tenant as tenant.fvTenant.attributes.dn for tenant in tenants track by tenant.fvTenant.attributes.dn"
+                                                ng-change="getAppPro(deployment.selectedTenant)"></select>
+                                        <label for="sel_tenant">Tenant</label>
+                                    </div>
+                                </div>
+                                <!-- ****** Select for App Profile ****** -->
+                                <div class="form-group">
+                                    <div class="form-group__text select ">
+                                        <select id="sel_apppro" name="sel_apppro" ng-model="deployment.selectedAppPro"
+                                                ng-options="apppro as apppro.fvAp.attributes.dn for apppro in apppros track by apppro.fvAp.attributes.dn"
+                                                ng-change="getEPGs(deployment.selectedAppPro)"></select>
+                                        <label for="sel_apppro">Application Profile</label>
+                                    </div>
+                                </div>
+                                <!-- ****** Select for EPG ****** -->
+                                <div class="form-group">
+                                    <div class="form-group__text select ">
+                                        <select id="sel_epg" name="sel_epg" ng-model="deployment.selectedEpg"
+                                                ng-options="epg as epg.fvAEPg.attributes.name for epg in epgs track by epg.fvAEPg.attributes.name"></select>
+                                        <label for="sel_epg">EPG</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="secondary-tabs">
+                <div class="tab-content">
+                    <div id="tab-intro-content" class="tab-pane active">
+                        <div class="panel panel--loose panel--bordered">
+                            <div id="content-div" class="row ">
+                                <div class="col-md-12 text-large">
+                                    <br/>
+                                    <h4 class="text-blue base-margin-bottom">ISE</h4>
+                                    <hr/>
+                                    <!--STEP 3 CODE BELOW-->
+                                    <div id="port-type-div" class="col-md-12 text-large">
+                                        <br/>
+
+                                        <!-- ****** Buttons to select port type ****** -->
+                                        <div class="btn-group">
+                                            <button class="btn btn--primary-ghost sn-type port-type selected"
+                                                    onclick="$('.port-type').removeClass('selected');$(this).addClass('selected')"
+                                                    ng-click="setPortType('select')">
+                                                Select EndPoint Group/AuthProfile
+                                            </button>
+                                            <button class="btn btn--primary-ghost sn-type port-type"
+                                                    onclick="$('.port-type').removeClass('selected');$(this).addClass('selected')"
+                                                    ng-click="setPortType('add')">
+                                                Add EndPoint Group/AuthProfile
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group__text">
+                                            <input id="MAC" ng-model="deployment.selectedMac">
+                                            <label for="MAC">MAC (XX:XX:XX:XX:XX:XX)</label>
+                                        </div>
+                                    </div>
+                                    <!-- ****** Select for EndPointGroup ****** -->
+                                    <div id="selection" ng-if="deployment.portType == 'select'">
+                                        <div class="form-group">
+                                            <div class="form-group__text select ">
+                                                <select id="sel_endpointgroup" name="sel_endpointgroup"
+                                                        ng-model="deployment.selectedEndpointgroup"
+                                                        ng-options="endpointgroup as endpointgroup.name for endpointgroup in endpointgroups track by endpointgroup.name"></select>>
+                                                <label for="sel_endpointgroup">EndPointGroup</label>
+                                            </div>
+                                        </div>
+                                        <!-- ****** Select for Authorization Profile ****** -->
+                                        <div class="form-group">
+                                            <div class="form-group__text select ">
+                                                <select id="sel_authprofile" name="sel_authprofile"
+                                                        ng-model="deployment.selectedAuthprofile"
+                                                        ng-options="authprofile as authprofile.name for authprofile in authprofiles track by authprofile.name"></select>>
+                                                <label for="sel_authprofile">Authorization Profile</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="selection" ng-if="deployment.portType == 'add'">
+                                        <div class="form-group">
+                                            <div class="form-group__text">
+                                                <input id="iseap" ng-model="deployment.selectedIseap">
+                                                <label for="iseap">Authorization Profile Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group__text">
+                                                <input id="iseap" ng-model="deployment.selectedIseapvlan">
+                                                <label for="iseap">Authorization Profile Vlan</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group__text">
+                                                <input id="iseeig" ng-model="deployment.selectedIseeig">
+                                                <label for="iseeig">Endpoint Identity Group Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group__text">
+                                                <input id="iseeigdescription" ng-model="deployment.selectedIseeigdescrip">
+                                                <label for="iseeigdescription">Endpoint Identity Group
+                                                    Description</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-large">
+                                        <br/>
+                                        <!-- ****** Button to send deployment to the server ****** -->
+                                        <button id="btnDeploy" class="btn btn--success" style="float:right"
+                                                ng-disabled="loading"
+                                                ng-click="deploy();">
+                                            Deploy
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
