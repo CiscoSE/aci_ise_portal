@@ -29,5 +29,8 @@ It might make sense for you to create a Python Virtual Environment before instal
 To run the the application execute in the root directory of the distribution:
 
 python manage.py makemigrations
+
 python manage.py migrate
+
 python manage.py runserver 0.0.0.0:YOUR_PORT
+
