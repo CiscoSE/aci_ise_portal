@@ -13,6 +13,9 @@ Contacts:
 
 **Container Installation**
 
+docker run -p 8080:8080 jasmah/aciiseportal
+
+go to http://0.0.0.0:8080
 
 
 **Source Installation**
