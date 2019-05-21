@@ -1,6 +1,6 @@
 **ACI and ISE Portal**
 
-This tool automates the configuration necessary to support user authentication using 802.1x and RADIUS with ACI and ISE.
+This tool automates the configuration necessary to support device authentication using 802.1x and RADIUS with ACI and ISE.
 
 
 HTML user interface works better in Chrome and Firefox
@@ -33,4 +33,8 @@ python manage.py makemigrations
 python manage.py migrate
 
 python manage.py runserver 0.0.0.0:YOUR_PORT
+
+**Demo**
+
+https://youtu.be/mYoW2EJfTco
 
